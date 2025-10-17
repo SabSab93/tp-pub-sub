@@ -1,20 +1,11 @@
 <template>
   <div class="page">
     <header>
-      <h1>TP Pub-Sub — Vue Front</h1>
-      <small class="badge">Socket.IO + REST</small>
+      <h1>TP Pub-Sub — Service X Passif</h1>
+      <small class="badge">TP-1</small>
     </header>
 
     <main>
-      <section class="card">
-        <h2>WhoAmI (GET /api/whoami)</h2>
-        <button @click="loadIPs">Charger mes IP</button>
-        <ul v-if="ips.length" class="ip-list">
-          <li v-for="ip in ips" :key="ip">{{ ip }}</li>
-        </ul>
-        <p v-else class="muted">Aucune IP chargée…</p>
-      </section>
-
       <section class="card">
         <h2>Chat</h2>
         <div class="messages" ref="msgBox">
@@ -28,10 +19,6 @@
             <span>{{ m.text }}</span>
           </div>
         </div>
-        <form @submit.prevent="onSend">
-          <input v-model="draft" type="text" placeholder="Tape un message…" />
-          <button :disabled="!draft.trim()">Envoyer</button>
-        </form>
       </section>
     </main>
   </div>
