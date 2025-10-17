@@ -6,6 +6,7 @@ import { WhoAmIController } from "./api/whoami.controller";
 import { ChatController } from "./api/chat.controller";
 
 const PORT = process.env.PORT ? Number(process.env.PORT) : 3000;
+const HOST = process.env.SERVICE_IP || "0.0.0.0";
 
 const app = express();
 const server = http.createServer(app);
@@ -25,6 +26,8 @@ app.get("/api/whoami", WhoAmIController.get);
 app.post("/api/chat", ChatController.post);
 
 // Écoute HTTP + WS
-server.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+
+
+server.listen(PORT, HOST, () => {
+  console.log(`✅ Service X running at http://${HOST}:${PORT}`);
 });
