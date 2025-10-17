@@ -13,8 +13,7 @@ const server = http.createServer(app);
 // WebSocket (singleton)
 ChatSocket.INSTANCE.setup(server);
 
-// Front (optionnel) – s'il existe un build Vue/Angular/React à servir
-// Attention : après build TS, __dirname pointe vers 'dist'
+
 const frontDist = path.join(__dirname, "../front/dist");
 app.use(express.static(frontDist));
 
